@@ -25,7 +25,7 @@
     // Let the device know we want to receive push notifications
     [[UIApplication sharedApplication] registerForRemoteNotificationTypes:
      (UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound | UIRemoteNotificationTypeAlert)];
-
+    
     UIAlertView *alert = [[UIAlertView alloc]
                           initWithTitle: @"AeroGear Push Tutorial"
                           message: @"We hope you enjoy receving Push messages!"
@@ -33,7 +33,7 @@
                           cancelButtonTitle:@"OK"
                           otherButtonTitles:nil];
     [alert show];
-
+    
     return YES;
 }
 
@@ -49,9 +49,9 @@
     // base URL where the "AeroGear Unified Push Server" is running.
     AGDeviceRegistration *registration =
     
-        // WARNING: make sure, you start JBoss with the -b 0.0.0.0 option, to bind on all interfaces
-        // from the iPhone, you can NOT use localhost :)
-        [[AGDeviceRegistration alloc] initWithServerURL:[NSURL URLWithString:@"<# URL of the running AeroGear UnifiedPush Server #>"]];
+    // WARNING: make sure, you start JBoss with the -b 0.0.0.0 option, to bind on all interfaces
+    // from the iPhone, you can NOT use localhost :)
+    [[AGDeviceRegistration alloc] initWithServerURL:[NSURL URLWithString:@"<# URL of the running AeroGear UnifiedPush Server #>"]];
     
     [registration registerWithClientInfo:^(id<AGClientDeviceInformation> clientInfo) {
         
